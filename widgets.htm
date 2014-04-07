@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<p><b><font color="#000099">Formatting database fields so line breaks display</font></b></p>
+<p>&lt;%=Replace(rsStory.Fields.Item(&quot;news_story&quot;).Value,chr(13),&quot;&lt;br&gt;&quot;)%&gt; 
+</p>
+<p>--------------------------------------------------------------------------------------</p>
+<p><font color="#000066"><b><font color="#000099">Server Map Path</font></b></font></p>
+<p>&lt;html&gt;<br>
+  &lt;head&gt;<br>
+  &lt;title&gt;Paddys Server MapPath&lt;/title&gt;<br>
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-1&quot;&gt;<br>
+  &lt;/head&gt;</p>
+<p>&lt;body bgcolor=&quot;#FFFFFF&quot; text=&quot;#000000&quot;&gt;<br>
+  &lt;p&gt;path is &lt;%=Server.MapPath(&quot;\&quot;)%&gt;<br>
+  &lt;/body&gt;<br>
+  &lt;/html&gt;<br>
+</p>
+<p>------------------------------------------------------------------------------------ 
+</p>
+<p><font color="#000066"><b><font color="#000099">Show session</font></b></font></p>
+<p>&lt;html&gt;<br>
+  &lt;head&gt;<br>
+  &lt;title&gt;Paddys Display Session&lt;/title&gt;<br>
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-1&quot;&gt;<br>
+  &lt;/head&gt;</p>
+<p>&lt;body bgcolor=&quot;#FFFFFF&quot; text=&quot;#000000&quot;&gt;<br>
+  &lt;%@ Language=VBScript %&gt;<br>
+  &lt;%<br>
+  on error resume next<br>
+  for x = 0 to session.Contents.Count<br>
+  Response.Write &quot;&lt;nobr&gt;&lt;pre&gt;&lt;b&gt;&quot;<br>
+  Response.write session.Contents.key(x) &amp; &quot; - &lt;/b&gt;&quot;<br>
+  Response.write session.Contents.item(x) &amp; &quot;&lt;/nobr&gt;&lt;p&gt;&lt;br&gt;&quot;<br>
+  next<br>
+  %&gt;<br>
+  &lt;/body&gt;<br>
+  &lt;/html&gt;</p>
+<p>---------------------------------------------------------------------------------------<br>
+</p>
+</body>
+</html>
